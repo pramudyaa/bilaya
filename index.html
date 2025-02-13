@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/background-flowers.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>Flowers</title>
+</head>
+<body>
+    <div class="flower-background">
+        <!-- Tambahkan beberapa elemen bunga -->
+        <div class="flower" style="top: 10%; left: 20%;"></div>
+        <div class="flower" style="top: 30%; left: 50%;"></div>
+        <div class="flower" style="top: 60%; left: 70%;"></div>
+        <div class="flower" style="top: 80%; left: 30%;"></div>
+    </div>
+    <div class="greetings">
+        <!-- silahkan menambah kata sesuai keinginan dengan <span>text...</span -->
+        <span>S</span>
+        <span>A</span>
+        <span>Y</span>
+        <span>A</span>
+        <span>N</span>
+        <span>G</span>
+        <span>K</span>
+        <span>U</span>
+    </div>
+    <div class="description">
+        <span>P, Klik !!!</span>
+    </div>
+    <div class="button">
+        <button>
+            <a href="valentine.html">Klik Bala</a>
+        </button>
+    </div>
+    <script>
+        document.body.addEventListener('click', function(event) {
+            const flower = document.createElement('div');
+            flower.className = 'flower';
+            flower.style.left = `${event.clientX - 10}px`;
+            flower.style.top = `${event.clientY - 10}px`;
+            document.body.appendChild(flower);
+
+            setTimeout(() => {
+                flower.remove();
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

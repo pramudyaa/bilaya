@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+
+body {
+    filter: blur(0.5px);
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Poppins', cursive;
+}
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background: rgba(255,0, 10, .2);
+    border-radius: 50%;
+    mix-blend-mode: screen;
+    filter: blur(100px);
+}
+canvas {
+    display: block;
+    z-index: 1;
+}
+body::before {
+    content: 'Happy Valentine Sayangku';
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    text-align: center;
+    font-size: 70px; /* Increased font size */
+    color: #fff;
+    z-index: 2;
+    animation: glow 7s ease-in-out infinite; /* Increased duration */
+}
+body::after {
+    content: 'Nabila';
+    position: absolute;
+    bottom: 60px;
+    width: 100%;
+    text-align: center;
+    font-size: 70px; /* Increased font size */
+    color: #fff;
+    z-index: 2;
+    animation: glow 7s ease-in-out infinite; /* Increased duration */
+}
+@keyframes glow {
+    0%, 100% {
+        color: #fff;
+        text-shadow: 0 0 12px #752020, 0 0 50px #752020, 0 0 100px #752020;
+    }
+    50% {
+        color: #979797;
+        text-shadow: none;
+    }
+}

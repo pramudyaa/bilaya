@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+*{
+    font-family: 'Poppins',cursive;
+}
+body{
+    color: azure;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden; /* Mencegah scroll jika bunga keluar dari viewport */
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><text x="10%" y="20%" font-size="30" fill="red" text-anchor="middle" dominant-baseline="middle">❤️</text><text x="80%" y="30%" font-size="30" fill="pink" text-anchor="middle" dominant-baseline="middle">💖</text><text x="30%" y="70%" font-size="30" fill="red" text-anchor="middle" dominant-baseline="middle">💕</text><text x="60%" y="50%" font-size="30" fill="pink" text-anchor="middle" dominant-baseline="middle">💘</text><text x="90%" y="90%" font-size="30" fill="red" text-anchor="middle" dominant-baseline="middle">❤️</text><text x="40%" y="10%" font-size="30" fill="pink" text-anchor="middle" dominant-baseline="middle">💖</text><text x="20%" y="40%" font-size="30" fill="red" text-anchor="middle" dominant-baseline="middle">❤️</text><text x="70%" y="60%" font-size="30" fill="pink" text-anchor="middle" dominant-baseline="middle">💖</text><text x="50%" y="80%" font-size="30" fill="red" text-anchor="middle" dominant-baseline="middle">💕</text><text x="30%" y="90%" font-size="30" fill="pink" text-anchor="middle" dominant-baseline="middle">💘</text></svg>');
+    background-size: 100% 100%; /* Sesuaikan ukuran emoji dan jarak */
+    background-repeat: no-repeat;
+    background-position: center; /* Adjust position to not cover text */
+    z-index: -1; /* Ensure background is behind text */
+}
+.greetings{
+    font-size: 6rem;
+    font-weight: 900;
+    position: relative; /* Ensure text is above background */
+    z-index: 1;
+}
+.greetings > span{
+    animation: glow 3s ease-in-out infinite; /* Perpanjang durasi animasi */
+}
+@keyframes glow{
+    0%, 100%{
+        color: #ff0000;
+        text-shadow: 0 0 12px #ffffff, 0 0 50px #ffffff, 0 0 100px #ffffff;
+    }
+    10%, 90%{
+        color: #ffffff;
+        text-shadow: none;
+    }
+}
+.greetings > span:nth-child(1){
+    animation-delay: 0s;
+}
+.greetings > span:nth-child(2){
+    animation-delay: 0.2s;
+}
+.greetings > span:nth-child(3){
+    animation-delay: 0.4s;
+}
+.greetings > span:nth-child(4){
+    animation-delay: 0.6s;
+}
+.greetings > span:nth-child(5){
+    animation-delay: 0.8s;
+}
+.greetings > span:nth-child(6){
+    animation-delay: 1s;
+}
+.greetings > span:nth-child(7){
+    animation-delay: 1.2s;
+}
+.greetings > span:nth-child(8){
+    animation-delay: 1.4s;
+}
+
+.description{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    position: relative; /* Ensure text is above background */
+    z-index: 1;
+}
+
+.button a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111;
+}
+
+.flower {
+    position: absolute;
+    width: 30px; /* Perbesar ukuran bunga */
+    height: 30px; /* Perbesar ukuran bunga */
+    background: url('/img/flowers.png') no-repeat center center; /* Perbaiki jalur relatif */
+    background-size: contain;
+    animation: rotate 7s linear infinite; /* Perpanjang durasi rotasi */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width:574px){
+    .greetings{
+        display: block;
+        font-size: 3rem;
+        font-weight: 500;
+        text-align: center;
+    }
+    .description{
+        font-size: 1rem;
+    }
+    
+    .button a{
+        font-size: .5rem;
+    }
+}
